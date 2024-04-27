@@ -150,8 +150,8 @@ class ViewerCommands(app_commands.Group, name="hooj"):
         if move not in ["Right", "Left", "Up", "Down"]:
             duration = 1
         else:
-            duration = max(0,min(9, duration))
-            
+            duration = max(0, min(9, duration))
+
         Thread(
             target=publish_pokemon_move,
             args=(
