@@ -18,7 +18,8 @@ from views.vod_submission.vod_submission_modal import NewVodSubmissionModal
 
 LOG = logging.getLogger(__name__)
 
-POKEMON_THREAD_ID = 1233467109485314150
+POKEMON_ENABLED = True
+POKEMON_THREAD_ID = 1233217486183469066
 PUBLISH_POLL_URL = f"{get_base_url()}/publish-poll-answer"
 POKEMON_PUBLISH_URL = f"{get_base_url()}/publish-streamdeck"
 
@@ -143,24 +144,30 @@ class ViewerCommands(app_commands.Group, name="hooj"):
             Choice(name="L", value="L"),
         ]
     )
-    async def pokemon_move(self, interaction: Interaction, move: str):
+    @app_commands.describe(duration="Number of times to make the move (1-9)")
+    async def pokemon_move(self, interaction: Interaction, move: str, duration: int):
         """Send a move to the Pokemon game"""
+        if move not in ["Right", "Left", "Up", "Down"]:
+            duration = 1
+        else:
+            duration = max(0,min(9, duration))
+            
         Thread(
             target=publish_pokemon_move,
             args=(
                 interaction.user.display_name,
                 move,
-                1,  # TODO: Allow users to optionally select a number 1-9 inclusive to repeat the given move
+                duration,
             ),
         ).start()
 
         await interaction.guild.get_thread(POKEMON_THREAD_ID).send(
-            f"{interaction.user.mention} played: {move} {1} times!",
+            f"{interaction.user.mention} played: {move} {duration} times!",
             allowed_mentions=AllowedMentions.none(),
         )
 
         await interaction.response.send_message(
-            f"Successfully sent move: {move}", ephemeral=True
+            f"Successfully sent move: {move} {duration} times!", ephemeral=True
         )
 
     @app_commands.command(name="good_morning")
