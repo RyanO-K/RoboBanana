@@ -5,6 +5,9 @@ services:
       repo: RyanO-K/RoboBanana
       branch: main
     dockerfile_path: ./Dockerfile
+    http_port: 3000
+    routes:
+      - path: /bot
     envs:
       - key: SOME_SECRET
         scope: RUN_TIME
@@ -16,6 +19,8 @@ services:
       branch: main
     dockerfile_path: ./server/Dockerfile
     http_port: 3000
+    routes:
+      - path: /server
 
   - name: cache
     image:
