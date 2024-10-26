@@ -1,0 +1,67 @@
+Database:
+  Host: db-mysql-nyc3-street-cred-do-user-18150772-0.j.db.ondigitalocean.com
+  Name: defaultdb
+  Username: doadmin
+Discord:
+  ChannelPoints:
+    PendingRewardChannel:
+    PointsAuditChannel:
+  Channels:
+    Stream:
+    Welcome:
+  CoolMeter:
+    CoolEmoji:
+    UncoolEmoji:
+  CrowdMute:
+    Duration: 1
+    Emoji: 1
+    Threshold: 15
+  GoodMorning:
+    RedemptionChannel:
+    RewardRequirement: 5
+    RewardRole:
+    ProgressChannel:
+  GuildID:
+  Inhouses:
+    EUOpenChannel:
+    NAOpenChannel:
+  Predictions:
+    Channel:
+    MaxNicknameQueue:
+    AuditChannel:
+  PointsHistory:
+    MaximumTransactions: 5
+  Roles:
+    Bot: 1299543716394176577
+    Mod: 1299518844251144254
+    CMChatModerator:
+    Trustworthy:
+  Subscribers:
+    18MonthTier3Role: 1299519917116362863
+    12MonthTier3Role: 1299519917116362863
+    6MonthTier3Role: 1299519917116362863
+    GiftedTier1Role: 1299519886745141319
+    GiftedTier2Role: 1299519906001195058
+    GiftedTier3Role: 1299519917116362863
+    Tier1Role: 1299519886745141319
+    Tier2Role: 1299519906001195058
+    Tier3Role: 1299519917116362863
+    TwitchTier3Role: 1299519917116362863
+  TempRoles:
+    ExpirationCheckCadenceMinutes: 30
+  VODReview:
+    ApprovedRole:
+    ApprovedTag:
+    BannedRole:
+    NeedsReviewTag:
+    RejectedRole:
+    RejectedTag:
+    RulesAcceptedRole:
+    RewardHoursPerReview: 8
+    SubmissionChannel:
+    ReviewerRole: 
+Server:
+  Host: server
+  Port: 3000
+  Cache:
+    Host: cache
