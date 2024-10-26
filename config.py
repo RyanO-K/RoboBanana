@@ -6,8 +6,6 @@ import logging
 import sys
 
 
-
-
 class Config:
     CONFIG = configparser.ConfigParser()
     # CONFIG.read("/config.ini")
