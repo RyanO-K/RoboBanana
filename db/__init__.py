@@ -116,7 +116,7 @@ class DB:
         LOG = logging.getLogger(__name__)
 
         if not password or password == None:
-            LOG.ERROR("Invalid Database Password")
+            LOG.error("Invalid Database Password")
         db_host = Config.CONFIG["Database"]["Host"]
         db_name = Config.CONFIG["Database"]["Name"]
 
