@@ -48,7 +48,7 @@ class OverlayMessageController:
         # to deal with the army of users explaining to me why it's 'broken'
         t3_role = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
         gifted_t3_role = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
-        twitch_t3_role = Config.CONFIG["Discord"]["Subscribers"]["TwitchTier3Role"]
+        twitch_t3_role = os.getenv("ROLES_TIERTWITCHTHREEROLE")
 
         valid_roles = [t3_role, gifted_t3_role, twitch_t3_role]
 

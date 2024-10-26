@@ -11,11 +11,9 @@ from config import YAMLConfig as Config
 from util.discord_utils import DiscordUtils
 from views.pagination.pagination_embed_view import PaginationEmbed, PaginationView
 
-EXPIRATION_CHECK_CADENCE = Config.CONFIG["Discord"]["TempRoles"][
-    "ExpirationCheckCadenceMinutes"
-]
-APPROVED_ROLE = Config.CONFIG["Discord"]["VODReview"]["ApprovedRole"]
-REJECTED_ROLE = Config.CONFIG["Discord"]["VODReview"]["RejectedRole"]
+EXPIRATION_CHECK_CADENCE = os.getenv("MISC_VODREVIEWBANK")
+APPROVED_ROLE = os.getenv("ROLES_APPROVEDVOD")
+REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
 # this is hardcoded until raze to radiant is over, or config file changes are allowed
 # TOP_ROLE_ACCEPTED should be 1077265826886979634 when committing and refers to the ▬▬▬▬▬Subscriptions▬▬▬▬▬ role
 TOP_ROLE_ACCEPTED = 1077265826886979634

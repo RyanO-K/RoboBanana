@@ -7,14 +7,14 @@ from db import DB, RaffleEntry, RaffleType
 from config import YAMLConfig as Config
 import random
 
-VOD_APPROVED_ROLE_ID = Config.CONFIG["Discord"]["VODReview"]["ApprovedRole"]
-VOD_SUBMISSION_CHANNEL_ID = Config.CONFIG["Discord"]["VODReview"]["SubmissionChannel"]
+VOD_APPROVED_ROLE_ID = os.getenv("ROLES_APPROVEDVOD")
+VOD_SUBMISSION_CHANNEL_ID = os.getenv("CHANNEL_VODSUBMIT")
 
 TIER3_ROLE = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
 GIFTED_TIER3_ROLE = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
-HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
+HIDDEN_MOD_ROLE = os.getenv("ROLES_HIDDENMOD")
 STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
+MOD_ROLE = os.getenv("ROLES_MOD")
 
 
 class RaffleController:

@@ -6,7 +6,7 @@ from controllers.temprole_controller import TempRoleController
 from util.discord_utils import DiscordUtils
 from discord.app_commands.errors import AppCommandError, CheckFailure
 
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
+MOD_ROLE = os.getenv("ROLES_MOD")
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs
 # CM_ROLE should be 1044433022537191515 when committing and refers to the Community Manager role

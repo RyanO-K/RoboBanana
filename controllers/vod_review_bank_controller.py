@@ -10,7 +10,7 @@ import logging
 from util.discord_utils import DiscordUtils
 
 LOG = logging.getLogger(__name__)
-HOURS_PER_REVIEW = Config.CONFIG["Discord"]["VODReview"]["RewardHoursPerReview"]
+HOURS_PER_REVIEW = os.getenv("MISC_VODREVIEWBANK")
 GIFTED_T3_ROLE_ID = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
 SECONDS_IN_HOUR = 3600
 # these are hardcoded until raze to radiant is over, or config file changes are allowed

@@ -17,11 +17,11 @@ MARKER_CHANNEL = 1099680985467064360  # Change to config option once RtR is done
 MARKER_LOCKOUT_SECONDS = 180
 MARKER_SUBTRACT_SECONDS = 60
 
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
-CHAT_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["CMChatModerator"]
-TRUSTWORTHY = Config.CONFIG["Discord"]["Roles"]["Trustworthy"]
-TIER3_ROLE_12MO = Config.CONFIG["Discord"]["Subscribers"]["12MonthTier3Role"]
-TIER3_ROLE_18MO = Config.CONFIG["Discord"]["Subscribers"]["18MonthTier3Role"]
+MOD_ROLE = os.getenv("ROLES_MOD")
+CHAT_MOD_ROLE = os.getenv("ROLES_CMCHATMODERATOR")
+TRUSTWORTHY = os.getenv("ROLES_TRUSTWORTHY")
+TIER3_ROLE_12MO = os.getenv("ROLES_12MONTHROLE")
+TIER3_ROLE_18MO = os.getenv("ROLES_18MONTHROLE")
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs
 # HIDDEN_MOD_ROLE should be 1040337265790042172 when committing and refers to the Mod (Role Hidden)

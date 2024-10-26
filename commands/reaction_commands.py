@@ -10,9 +10,9 @@ from util.discord_utils import DiscordUtils
 
 LOG = logging.getLogger(__name__)
 
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
-CROWD_MUTE_DURATION = Config.CONFIG["Discord"]["CrowdMute"]["Duration"]
-CROWD_MUTE_THRESHOLD = Config.CONFIG["Discord"]["CrowdMute"]["Threshold"]
+MOD_ROLE = os.getenv("ROLES_MOD")
+CROWD_MUTE_DURATION = os.getenv("CROWDMUTE_DURATION")
+CROWD_MUTE_THRESHOLD = os.getenv("CROWDMUTE_THRESHOLD")
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs
 # HIDDEN_MOD_ROLE should be 1040337265790042172 when committing and refers to the Mod (Role Hidden)

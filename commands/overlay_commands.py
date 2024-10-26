@@ -16,7 +16,7 @@ from views.overlay.configure_modal import OverlayConfigurationModal
 
 LOG = logging.getLogger(__name__)
 
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
+MOD_ROLE = os.getenv("ROLES_MOD")
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs
 # HIDDEN_MOD_ROLE should be 1040337265790042172 when committing and refers to the Mod (Role Hidden)

@@ -7,7 +7,7 @@ from config import YAMLConfig as Config
 from discord.ext import tasks
 
 LOG = logging.getLogger(__name__)
-MAX_QUEUE_SIZE = Config.CONFIG["Discord"]["Predictions"]["MaxNicknameQueue"]
+MAX_QUEUE_SIZE = os.getenv("MISC_NICKNAMEQUEUE")
 ACCUMULATORS = {}
 
 

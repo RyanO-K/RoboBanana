@@ -2,7 +2,7 @@ from models.transaction import Transaction
 from db import DB
 from config import YAMLConfig as Config
 
-MAXIMUM_TRANSACTIONS = Config.CONFIG["Discord"]["PointsHistory"]["MaximumTransactions"]
+MAXIMUM_TRANSACTIONS = os.getenv("POINTS_MAXTRANSACTION")
 
 
 class PointHistoryController:

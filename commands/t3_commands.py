@@ -52,11 +52,11 @@ class EmoteAnimation(enum.Enum):
 
 T3_ROLE = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
 GIFTED_T3_ROLE = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
-TWITCH_T3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["TwitchTier3Role"]
+TWITCH_T3_ROLE = os.getenv("ROLES_TIERTWITCHTHREEROLE")
 
-HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
+HIDDEN_MOD_ROLE = os.getenv("ROLES_HIDDENMOD")
 STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
+MOD_ROLE = os.getenv("ROLES_MOD")
 
 T3_TTS_ENABLED = True
 T3_TTS_REQUIRED_POINTS = 10000

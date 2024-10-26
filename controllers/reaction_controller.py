@@ -9,9 +9,9 @@ LOG = logging.getLogger(__name__)
 DEFAULT_EMOJI_REACTION_DELAY = (
     15  # Default delay for Robomoji reactions if not set manually
 )
-CROWD_MUTE_EMOJI_ID = Config.CONFIG["Discord"]["CrowdMute"]["Emoji"]
-CROWD_MUTE_THRESHOLD = Config.CONFIG["Discord"]["CrowdMute"]["Threshold"]
-CROWD_MUTE_DURATION = Config.CONFIG["Discord"]["CrowdMute"]["Duration"]
+CROWD_MUTE_EMOJI_ID = os.getenv("EMOJI_MUTE")
+CROWD_MUTE_THRESHOLD = os.getenv("CROWDMUTE_THRESHOLD")
+CROWD_MUTE_DURATION = os.getenv("CROWDMUTE_DURATION")
 
 CROWD_MUTE_ENABLED = True
 

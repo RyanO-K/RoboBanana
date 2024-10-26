@@ -55,7 +55,7 @@ TIER3_ROLE = os.getenv("ROLES_TIERTHREEROLE")
 GIFTED_TIER3_ROLE = os.getenv("ROLES_GIFTEDTIERTHREEROLE")
 # HIDDEN_MOD_ROLE should be 1040337265790042172 when committing and refers to the Mod (Role Hidden)
 # STAFF_DEVELOPER_ROLE should be 1226317841272279131 when committing and refers to the Staff Developer role
-HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
+HIDDEN_MOD_ROLE = os.getenv("ROLES_HIDDENMOD")
 STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 FOSSA_BOT_ID = 488164251249279037
 SERVER_SUBSCRIPTION_MESSAGE_TYPE = 25
@@ -65,7 +65,7 @@ MAX_EMOJI_COUNT = 5
 MAX_CHARACTER_LENGTH = 200
 ROLE_AND_USER_OVERRIDE: dict[str, int] = {
     STAFF_DEVELOPER_ROLE: 300,
-    Config.CONFIG["Discord"]["Roles"]["Mod"]: 400,
+    os.getenv("ROLES_MOD"): 400,
     HIDDEN_MOD_ROLE: 400,
     1237760496191537176: 400,  # Hooj's Accountant
     204343692960464896: 9999,  # Ethan
@@ -312,7 +312,7 @@ async def main():
     async with client:
         tree.add_command(SyncCommands(tree, client))
         SyncUtils.add_commands_to_tree(tree, client)
-        await client.start(Config.CONFIG["Secrets"]["Discord"]["Token"])
+        await client.start(os.getenv("DISCORD_TOKEN"))
 
 
 if __name__ == "__main__":

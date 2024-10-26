@@ -13,7 +13,7 @@ from .prediction_view import PredictionView
 
 STREAM_CHAT = os.getenv("CHANNEL_STREAM")
 PENDING_REWARDS_CHAT_ID = os.getenv("CHANNEL_PENDINGREWARDCHANNEL")
-PREDICTION_AUDIT_CHANNEL = Config.CONFIG["Discord"]["Predictions"]["AuditChannel"]
+PREDICTION_AUDIT_CHANNEL = os.getenv("CHANNEL_PREDICTIONSAUDIT")
 
 
 class ClosePredictionView(View):

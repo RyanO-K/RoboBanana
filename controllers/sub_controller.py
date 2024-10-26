@@ -14,19 +14,15 @@ from datetime import datetime
 import pytz
 
 STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
-BOT_AUDIT_CHANNEL = Config.CONFIG["Discord"]["ChannelPoints"]["PointsAuditChannel"]
-SIX_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["6MonthTier3Role"]
-TWELVE_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"][
-    "12MonthTier3Role"
-]
+BOT_AUDIT_CHANNEL = os.getenv("CHANNEL_CHANNELPOINTS")
+SIX_MONTH_TIER_3_ROLE_ID = os.getenv("ROLES_6MONTHROLE")
+TWELVE_MONTH_TIER_3_ROLE_ID = os.getenv("ROLES_12MONTHROLE")
 TIER_3_ROLE_ID = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
-EIGHTEEN_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"][
-    "18MonthTier3Role"
-]
+EIGHTEEN_MONTH_TIER_3_ROLE_ID = os.getenv("ROLES_18MONTHROLE")
 GIFTED_TIER_3_ROLE_ID = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
-TWITCH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["TwitchTier3Role"]
-NA_OPEN_INHOUSE_CHANNEL_ID = Config.CONFIG["Discord"]["Inhouses"]["NAOpenChannel"]
-EU_OPEN_INHOUSE_CHANNEL_ID = Config.CONFIG["Discord"]["Inhouses"]["EUOpenChannel"]
+TWITCH_TIER_3_ROLE_ID = os.getenv("ROLES_TIERTWITCHTHREEROLE")
+NA_OPEN_INHOUSE_CHANNEL_ID = os.getenv("CHANNEL_NAINHOUSE")
+EU_OPEN_INHOUSE_CHANNEL_ID = os.getenv("CHANNEL_EUINHOUSE")
 GUILD_ID = os.getenv("GuildID")
 
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
@@ -36,8 +32,8 @@ PREMIUM_IDS = list(
     map(
         int,
         [
-            Config.CONFIG["Discord"]["Subscribers"]["Tier1Role"],
-            Config.CONFIG["Discord"]["Subscribers"]["Tier2Role"],
+            os.getenv("ROLES_TIERONEROLE"),
+            os.getenv("ROLES_TIERTWOROLE"),
             os.getenv("SUBSCRIBERS_TIERTHREEROLE"),
         ],
     )

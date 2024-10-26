@@ -8,9 +8,7 @@ from config import YAMLConfig as Config
 
 
 MORNING_DELTA = timedelta(hours=10)
-MORNING_REWARD_REQUIREMENT = Config.CONFIG["Discord"]["GoodMorning"][
-    "RewardRequirement"
-]
+MORNING_REWARD_REQUIREMENT = os.getenv("MISC_GOODMORNINGCOUNT")
 RESET_TIMESTAMP = datetime(year=1970, month=1, day=1)
 
 

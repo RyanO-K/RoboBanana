@@ -13,11 +13,11 @@ POINTS_PER_ACCRUAL = 50
 
 
 ROLE_MULTIPLIERS: dict[str, int] = {
-    Config.CONFIG["Discord"]["Subscribers"]["Tier1Role"]: 2,
-    Config.CONFIG["Discord"]["Subscribers"]["GiftedTier1Role"]: 2,
-    Config.CONFIG["Discord"]["GoodMorning"]["RewardRole"]: 2,  # T2 GM Role
-    Config.CONFIG["Discord"]["Subscribers"]["Tier2Role"]: 3,
-    Config.CONFIG["Discord"]["Subscribers"]["GiftedTier2Role"]: 3,
+    os.getenv("ROLES_TIERONEROLE"): 2,
+    os.getenv("ROLES_TIERONEROLE"): 2,
+    os.getenv("ROLES_GOODMORNING"): 2,  # T2 GM Role
+    os.getenv("ROLES_TIERTWOROLE"): 3,
+    os.getenv("ROLES_GIFTEDTIERTWOROLE"): 3,
     os.getenv("SUBSCRIBERS_TIERTHREEROLE"): 4,
     os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE"): 4,
 }

@@ -9,8 +9,8 @@ from controllers.predictions.create_prediction_controller import (
 from db import DB
 
 LOG = logging.getLogger(__name__)
-PREDICTION_AUDIT_CHANNEL = Config.CONFIG["Discord"]["Predictions"]["AuditChannel"]
-PREDICTION_THREAD_TARGET_CHANNEL = Config.CONFIG["Discord"]["Predictions"]["Channel"]
+PREDICTION_AUDIT_CHANNEL = os.getenv("CHANNEL_PREDICTIONSAUDIT")
+PREDICTION_THREAD_TARGET_CHANNEL = os.getenv("CHANNEL_PREDICTIONS")
 
 
 class CreatePredictionModal(Modal, title="Start new prediction"):

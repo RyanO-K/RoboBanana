@@ -24,18 +24,18 @@ import logging
 LOG = logging.getLogger(__name__)
 JOEL_DISCORD_ID = 112386674155122688
 HOOJ_DISCORD_ID = 82969926125490176
-PREDICTION_AUDIT_CHANNEL = Config.CONFIG["Discord"]["Predictions"]["AuditChannel"]
-TIER3_ROLE_12MO = Config.CONFIG["Discord"]["Subscribers"]["12MonthTier3Role"]
-TIER3_ROLE_18MO = Config.CONFIG["Discord"]["Subscribers"]["18MonthTier3Role"]
-CHAT_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["CMChatModerator"]
-TRUSTWORTHY = Config.CONFIG["Discord"]["Roles"]["Trustworthy"]
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
+PREDICTION_AUDIT_CHANNEL = os.getenv("CHANNEL_PREDICTIONSAUDIT")
+TIER3_ROLE_12MO = os.getenv("ROLES_12MONTHROLE")
+TIER3_ROLE_18MO = os.getenv("ROLES_18MONTHROLE")
+CHAT_MOD_ROLE = os.getenv("ROLES_CMCHATMODERATOR")
+TRUSTWORTHY = os.getenv("ROLES_TRUSTWORTHY")
+MOD_ROLE = os.getenv("ROLES_MOD")
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs
 # HIDDEN_MOD_ROLE should be 1040337265790042172 when committing and refers to the Mod (Role Hidden)
 # STAFF_DEVELOPER_ROLE should be 1226317841272279131 when committing and refers to the Staff Developer role
 # PREDICTION_DEALER_ROLE should be 1229896209515282472 when committing and refers to the Dealer role for Predictions
-HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
+HIDDEN_MOD_ROLE = os.getenv("ROLES_HIDDENMOD")
 STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 PREDICTION_DEALER_ROLE = 1229896209515282472
 

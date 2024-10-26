@@ -16,8 +16,8 @@ from db.models import PredictionChoice
 from server.models.quick_prediction import QuickPrediction
 
 GUILD_ID = os.getenv("GuildID")
-PREDICTION_CHANNEL_ID = Config.CONFIG["Discord"]["Predictions"]["Channel"]
-PREDICTION_AUDIT_CHANNEL = Config.CONFIG["Discord"]["Predictions"]["AuditChannel"]
+PREDICTION_CHANNEL_ID = os.getenv("CHANNEL_PREDICTIONS")
+PREDICTION_AUDIT_CHANNEL = os.getenv("CHANNEL_PREDICTIONSAUDIT")
 
 LOG = logging.getLogger(__name__)
 

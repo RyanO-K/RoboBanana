@@ -30,10 +30,10 @@ POKEMON_THREAD_ID = 1233467109485314150
 PUBLISH_POLL_URL = f"{get_base_url()}/publish-poll-answer"
 POKEMON_PUBLISH_URL = f"{get_base_url()}/publish-streamdeck"
 
-HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
+HIDDEN_MOD_ROLE = os.getenv("ROLES_HIDDENMOD")
 STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
-GIFTED_T2_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier2Role"]
+MOD_ROLE = os.getenv("ROLES_MOD")
+GIFTED_T2_ROLE = os.getenv("ROLES_GIFTEDTIERTWOROLE")
 TEMPROLE_AUDIT_CHANNEL = 1225769539267199026
 
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")

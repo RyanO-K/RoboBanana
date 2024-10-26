@@ -1,7 +1,7 @@
 from config import YAMLConfig as Config
 
-HOST = Config.CONFIG["Server"]["Host"]
-PORT = Config.CONFIG["Server"]["Port"]
+HOST = os.getenv("SERVER_HOST")
+PORT = os.getenv("SERVER_PORT")
 
 
 def get_base_url():

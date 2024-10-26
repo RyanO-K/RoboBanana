@@ -22,13 +22,13 @@ from controllers.temprole_controller import TempRoleController
 from controllers.vod_review_bank_controller import VODReviewBankController
 from util.discord_utils import DiscordUtils
 
-APPROVED_TAG = Config.CONFIG["Discord"]["VODReview"]["ApprovedTag"]
-REJECTED_TAG = Config.CONFIG["Discord"]["VODReview"]["RejectedTag"]
-APPROVED_ROLE = Config.CONFIG["Discord"]["VODReview"]["ApprovedRole"]
-REJECTED_ROLE = Config.CONFIG["Discord"]["VODReview"]["RejectedRole"]
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
-CM_ROLE = Config.CONFIG["Discord"]["Roles"]["CMChatModerator"]
-VOD_TEAM_ROLE = Config.CONFIG["Discord"]["VODReview"]["ReviewerRole"]
+APPROVED_TAG = os.getenv("VODREVIEW_APPROVED")
+REJECTED_TAG = os.getenv("VODREVIEW_REJECTED")
+APPROVED_ROLE = os.getenv("ROLES_APPROVEDVOD")
+REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
+MOD_ROLE = os.getenv("ROLES_MOD")
+CM_ROLE = os.getenv("ROLES_CMCHATMODERATOR")
+VOD_TEAM_ROLE = os.getenv("ROLES_VODREVIEWER")
 USER_ID_PATTERN = re.compile(r"(<@([0-9]+)>)")
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs

@@ -7,11 +7,11 @@ import discord.utils
 from db import DB
 from config import YAMLConfig as Config
 
-VOD_BANNED_ROLE = Config.CONFIG["Discord"]["VODReview"]["BannedRole"]
-VOD_REJECTED_ROLE = Config.CONFIG["Discord"]["VODReview"]["RejectedRole"]
-VOD_RULES_ACCEPTED_ROLE = Config.CONFIG["Discord"]["VODReview"]["RulesAcceptedRole"]
-VOD_SUBMISSIONS_CHANNEL = Config.CONFIG["Discord"]["VODReview"]["SubmissionChannel"]
-VOD_NEEDS_REVIEW_TAG = Config.CONFIG["Discord"]["VODReview"]["NeedsReviewTag"]
+VOD_BANNED_ROLE = os.getenv("ROLES_VODBANNED")
+VOD_REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
+VOD_RULES_ACCEPTED_ROLE = os.getenv("ROLES_ACCEPTEDVODRULES")
+VOD_SUBMISSIONS_CHANNEL = os.getenv("CHANNEL_VODSUBMIT")
+VOD_NEEDS_REVIEW_TAG = os.getenv("NEEDREVIEW_TAG")
 
 
 class NewVodSubmissionModal(Modal, title="Submit a VOD for review!"):

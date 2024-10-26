@@ -12,11 +12,9 @@ from discord.ext import tasks
 LOG = logging.getLogger(__name__)
 
 STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
-REWARD_ROLE_ID = Config.CONFIG["Discord"]["GoodMorning"]["RewardRole"]
-REWARD_REDEMPTION_CHANNEL_ID = Config.CONFIG["Discord"]["GoodMorning"][
-    "RedemptionChannel"
-]
-REWARD_PROGRESS_CHANNEL = Config.CONFIG["Discord"]["GoodMorning"]["ProgressChannel"]
+REWARD_ROLE_ID = os.getenv("ROLES_GOODMORNING")
+REWARD_REDEMPTION_CHANNEL_ID = os.getenv("CHANNEL_MORNINGREDEMPTION")
+REWARD_PROGRESS_CHANNEL = os.getenv("CHANNEL_REWARDPROGRESS")
 GOOD_MORNING_EXPLANATION = "What's this message? <#1064317660084584619>"
 
 PACIFIC_TZ = timezone("US/Pacific")

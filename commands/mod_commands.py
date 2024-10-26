@@ -38,15 +38,15 @@ import enum
 LOG = logging.getLogger(__name__)
 JOEL_DISCORD_ID = 112386674155122688
 HOOJ_DISCORD_ID = 82969926125490176
-POINTS_AUDIT_CHANNEL = Config.CONFIG["Discord"]["ChannelPoints"]["PointsAuditChannel"]
-TIER1_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier1Role"]
-TIER2_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier2Role"]
+POINTS_AUDIT_CHANNEL = os.getenv("CHANNEL_CHANNELPOINTS")
+TIER1_ROLE = os.getenv("ROLES_TIERONEROLE")
+TIER2_ROLE = os.getenv("ROLES_TIERTWOROLE")
 TIER3_ROLE = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
-BOT_ROLE = Config.CONFIG["Discord"]["Roles"]["Bot"]
-GIFTED_TIER1_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier1Role"]
+BOT_ROLE = os.getenv("ROLES_BOT")
+GIFTED_TIER1_ROLE = os.getenv("ROLES_TIERONEROLE")
 GIFTED_TIER3_ROLE = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
-MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
-HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
+MOD_ROLE = os.getenv("ROLES_MOD")
+HIDDEN_MOD_ROLE = os.getenv("ROLES_HIDDENMOD")
 STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 
 GUILD_ID = os.getenv("GuildID")
