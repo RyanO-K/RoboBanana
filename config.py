@@ -5,7 +5,7 @@ import os.path
 import logging
 import sys
 
-LOG = logging.getLogger(__name__)
+
 
 
 class Config:
@@ -14,8 +14,9 @@ class Config:
 
 
 class YAMLConfig:
+    LOG = logging.getLogger(__name__)
     CONFIG = dict()
-    logging.ERROR(os.getenv("ROLES_MOD"))
+    LOG.ERROR(os.getenv("ROLES_MOD"))
     # try:
     #     with open("/config.yaml") as config_file:
     #         CONFIG = yaml.safe_load(config_file)
