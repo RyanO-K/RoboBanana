@@ -94,7 +94,7 @@ from .models import (
 )
 from config import YAMLConfig as Config
 import os
-
+import logging
 
 class DB:
     __instance = None
@@ -113,6 +113,8 @@ class DB:
 
         username = Config.CONFIG["Database"]["Username"]
         password = os.getenv("DATABASE_PASSWORD")
+        LOG = logging.getLogger(__name__)
+
         if not password or password == None:
             LOG.ERROR("Invalid Database Password")
         db_host = Config.CONFIG["Database"]["Host"]
