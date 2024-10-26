@@ -83,16 +83,16 @@ services:
         value: 0
       - key: ROLES_TIERTWITCHTHREEROLE
         scope: RUN_TIME
-        value: 0
+        value: 1299519917116362863
       - key: CHANNEL_CHANNELPOINTS
         scope: RUN_TIME
         value: 0
       - key: ROLES_TIERTWOROLE
         scope: RUN_TIME
-        value: 0
+        value: 1299519906001195058
       - key: ROLES_TIERONEROLE
         scope: RUN_TIME
-        value: 0
+        value: 1299519886745141319
       - key: CHANNEL_PREDICTIONSAUDIT
         scope: RUN_TIME
         value: 0
