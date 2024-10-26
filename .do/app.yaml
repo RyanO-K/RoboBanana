@@ -2,31 +2,32 @@ name: robofishbot
 services:
   - name: bot
     environment_slug: docker
-    git:
-      repo_clone_url: https://github.com/RyanO-K/RoboBanana.git
+    github:
+      repo: RyanO-K/RoboBanana
       branch: main
     build_command: docker build -t robofishbot .
-    run_command: docker-compose up -d bot
     envs:
       - key: SOME_SECRET
         scope: RUN_TIME
         value: ${SOME_SECRET_FROM_REPOSITORY}
+
   - name: server
     environment_slug: docker
-    git:
-      repo_clone_url: https://github.com/RyanO-K/RoboBanana.git
+    github:
+      repo: RyanO-K/RoboBanana
       branch: main
     build_command: docker build -t robofishbot-server -f ./server/Dockerfile .
-    run_command: docker-compose up -d server
     http_port: 3000
+
   - name: cache
-    environment_slug: docker
-    image: redis:alpine
-    run_command: redis-server
+    image:
+      registry_type: DOCKER_HUB
+      registry: redis
+      repository: redis
+      tag: alpine
     http_port: 6379
     healthcheck:
       - command: ["redis-cli", "ping"]
         interval: 10s
         timeout: 1s
         retries: 3
-
