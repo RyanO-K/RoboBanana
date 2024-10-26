@@ -14,5 +14,4 @@ jobs:
        uses: digitalocean/app_action/deploy@v2
        with:
          token: ${{ secrets.TOKEN }} 
-         app_spec_location: compose.yaml
 
