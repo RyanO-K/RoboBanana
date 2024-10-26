@@ -142,13 +142,13 @@ services:
      value: 0
    - key: DATABASE_USERNAME
      scope: RUN_TIME
-     value: 0
+     value: woohoojinuser
    - key: DATABASE_HOST
      scope: RUN_TIME
      value: 0
    - key: DATABASE_NAME
      scope: RUN_TIME
-     value: 0
+     value: woohoojin
    - key: EMOJI_MUTE
      scope: RUN_TIME
      value: 0
