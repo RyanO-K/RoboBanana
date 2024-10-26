@@ -32,9 +32,16 @@ AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_URL = f"{get_base_url()}/publish-sub"
 PUBLISH_COUNT_URL = f"{get_base_url()}/publish-sub-count"
 
+def get_role(role_name):
+    value = os.getenv(role_name)
+    if value is None:
+        LOG.warn(f"Environment variable {role_name} is not set.")
+    return int(value)
+
+
 PREMIUM_IDS = list(
     map(
-        int,
+        get_role,
         [
             os.getenv("ROLES_TIERONEROLE"),
             os.getenv("ROLES_TIERTWOROLE"),
