@@ -174,9 +174,6 @@ services:
       - key: NEEDREVIEW_TAG
         scope: RUN_TIME
         value: 0
-    configs:
-      - source: robobanana-config
-        target: /config.yaml
 
   - name: server
     github:
@@ -186,9 +183,7 @@ services:
     http_port: 3000
     routes:
       - path: /server
-    configs:
-      - source: robobanana-config
-        target: /config.yaml
+
 
 
   - name: cache
@@ -202,6 +197,3 @@ services:
         interval: 10s
         timeout: 1s
         retries: 3
-configs:
-  robobanana-config:
-    file: ./config.yaml
