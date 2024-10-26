@@ -1,0 +1,48 @@
+ingress:
+  rules:
+  - component:
+      name: bot
+    match:
+      path:
+        prefix: /bot
+  - component:
+      name: server
+    match:
+      path:
+        prefix: /server
+  - component:
+      name: cache
+    match:
+      path:
+        prefix: /
+name: robofishbot
+region: nyc
+services:
+- dockerfile_path: ./Dockerfile
+  envs:
+  - key: SOME_SECRET
+    scope: RUN_TIME
+  github:
+    branch: main
+    repo: RyanO-K/RoboBanana
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-0.5gb
+  name: bot
+- dockerfile_path: ./server/Dockerfile
+  github:
+    branch: main
+    repo: RyanO-K/RoboBanana
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-0.5gb
+  name: server
+- http_port: 6379
+  image:
+    registry: library
+    registry_type: DOCKER_HUB
+    repository: redis
+    tag: alpine
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-0.5gb
+  name: cache
