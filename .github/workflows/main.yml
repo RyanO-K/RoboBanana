@@ -12,9 +12,9 @@ jobs:
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.DEPLOY_HOST }}
-          keys: ${{ secrets.DEPLOY_KEY }}
+          keys: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.DEPLOY_USERNAME }}
-          password: ${{  secrets.PASSKEY }}
+          PASSWORD: ${{  secrets.PASSWORD }}
           repository: RyanO-K/RoboBanana
           tag_withref: true
           tag with sha: true
