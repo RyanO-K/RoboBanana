@@ -15,7 +15,7 @@ from .pending_reward_view import PendingRewardView
 
 PUBLISH_URL = f"{get_base_url()}/publish-streamdeck"
 
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
 
 LOG = logging.getLogger(__name__)

@@ -46,7 +46,7 @@ discord.utils.setup_logging(level=logging.INFO, root=True)
 COOL_URL = f"{get_base_url()}/publish-cool"
 COOL_ID = Config.CONFIG["Discord"]["CoolMeter"]["CoolEmoji"]
 UNCOOL_ID = Config.CONFIG["Discord"]["CoolMeter"]["UncoolEmoji"]
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
 WELCOME_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Welcome"]
 PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][

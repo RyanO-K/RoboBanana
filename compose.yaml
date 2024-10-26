@@ -6,10 +6,7 @@ services:
       - "host.docker.internal:host-gateway"
     configs:
       - source: robobanana-config
-        target: /config.yaml
-    secrets:
-      - source: robobanana-secrets
-        target: /secrets.yaml
+        target: ./config.yaml
   server:
     build:
       context: .
@@ -22,10 +19,7 @@ services:
       - "3000:3000"
     configs:
       - source: robobanana-config
-        target: /config.yaml
-    secrets:
-      - source: robobanana-secrets
-        target: /secrets.yaml
+        target: ./config.yaml
   cache:
     image: redis:alpine
     ports:
@@ -41,8 +35,5 @@ services:
 configs:
   robobanana-config:
     file: ./config.yaml
-secrets:
-  robobanana-secrets:
-    file: ./secrets.yaml
 volumes:
   cache:

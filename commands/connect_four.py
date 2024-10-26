@@ -11,7 +11,7 @@ from controllers.connect_four.game_orchestrator import GameOrchestrator
 from util.server_utils import get_base_url
 
 PUBLISH_CONNECT_FOUR_URL = f"{get_base_url()}/publish-connect-four"
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs

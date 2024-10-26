@@ -12,6 +12,9 @@ services:
       - key: SOME_SECRET
         scope: RUN_TIME
         value: ${SOME_SECRET_FROM_REPOSITORY}
+    configs:
+      - source: robobanana-config
+        target: /path/to/config.yaml
 
   - name: server
     github:
@@ -21,6 +24,10 @@ services:
     http_port: 3000
     routes:
       - path: /server
+    configs:
+      - source: robobanana-config
+        target: /path/to/config.yaml
+
 
   - name: cache
     image:
@@ -33,3 +40,6 @@ services:
         interval: 10s
         timeout: 1s
         retries: 3
+configs:
+  robobanana-config:
+    file: ./config.yaml

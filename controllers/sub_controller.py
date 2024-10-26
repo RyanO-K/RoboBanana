@@ -29,7 +29,7 @@ NA_OPEN_INHOUSE_CHANNEL_ID = Config.CONFIG["Discord"]["Inhouses"]["NAOpenChannel
 EU_OPEN_INHOUSE_CHANNEL_ID = Config.CONFIG["Discord"]["Inhouses"]["EUOpenChannel"]
 GUILD_ID = Config.CONFIG["Discord"]["GuildID"]
 
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_URL = f"{get_base_url()}/publish-sub"
 PUBLISH_COUNT_URL = f"{get_base_url()}/publish-sub-count"
 PREMIUM_IDS = list(

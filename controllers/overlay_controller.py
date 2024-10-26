@@ -6,7 +6,7 @@ from config import YAMLConfig as Config
 import logging
 
 PUBLISH_OVERLAY_URL = f"{get_base_url()}/publish-overlay"
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 
 LOG = logging.getLogger(__name__)
 

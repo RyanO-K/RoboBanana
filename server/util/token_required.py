@@ -11,7 +11,7 @@ parent_directory = os.path.dirname(current_directory)
 # setting path
 sys.path.append(parent_directory)
 
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 
 
 # Authentication decorator

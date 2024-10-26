@@ -111,7 +111,7 @@ class DB:
         self.__initialized = True
 
         username = Config.CONFIG["Database"]["Username"]
-        password = Config.CONFIG["Secrets"]["Database"]["Password"]
+        password = os.getenv("DATABASE_PASSWORD")
         db_host = Config.CONFIG["Database"]["Host"]
         db_name = Config.CONFIG["Database"]["Name"]
 

@@ -51,7 +51,7 @@ STAFF_DEVELOPER_ROLE = Config.CONFIG["Discord"]["Roles"]["StaffDev"]
 
 GUILD_ID = Config.CONFIG["Discord"]["GuildID"]
 
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_POLL_URL = f"{get_base_url()}/publish-poll"
 PUBLISH_TIMER_URL = f"{get_base_url()}/publish-timer"
 PUBLISH_CHESS_URL = f"{get_base_url()}/publish-chess"
