@@ -46,4 +46,3 @@ class YAMLConfig:
         )
 
         sys.exit(-1)
-    
