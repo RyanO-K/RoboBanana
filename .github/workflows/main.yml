@@ -19,3 +19,4 @@ jobs:
           script: |
             git clone https://github.com/RyanO-K/RoboBanana
             docker compose up
+
