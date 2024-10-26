@@ -10,7 +10,7 @@ LOG = logging.getLogger(__name__)
 
 class Config:
     CONFIG = configparser.ConfigParser()
-    #CONFIG.read("/config.ini")
+    # CONFIG.read("/config.ini")
 
 
 class YAMLConfig:
