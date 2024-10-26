@@ -12,6 +12,8 @@ from util.discord_utils import DiscordUtils
 from views.pagination.pagination_embed_view import PaginationEmbed, PaginationView
 import os
 
+LOG = logging.getLogger(__name__)
+EXPIRATION_CHECK_CADENCE = None
 try:
     EXPIRATION_CHECK_CADENCE = int(os.getenv("MISC_VODREVIEWBANK"))
 except TypeError:
@@ -22,7 +24,7 @@ REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
 # TOP_ROLE_ACCEPTED should be 1077265826886979634 when committing and refers to the ▬▬▬▬▬Subscriptions▬▬▬▬▬ role
 TOP_ROLE_ACCEPTED = 1077265826886979634
 
-LOG = logging.getLogger(__name__)
+
 
 
 class TempRoleController:
