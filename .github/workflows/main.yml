@@ -11,8 +11,10 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v1
         with:
-          username: ${{   secrets.DOCKERHUB_USERNAME }}
-          password: $${{  secrets.DOCKERHUB_PASSWORD }}
+          host: ${{ secrets.DEPLOY_HOST }}
+          keys: ${{ secrets.DEPLOY_KEY }}
+          username: ${{ secrets.DEPLOY_USERNAME}
+          password: $${{  secrets.PASSKEY }}
           repository: RyanO-K/RoboBanana
           tag_withref: true
           tag with sha: true
