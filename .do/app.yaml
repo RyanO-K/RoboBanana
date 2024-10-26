@@ -3,7 +3,7 @@ services:
   - name: bot
     github:
       repo: RyanO-K/RoboBanana
-      branch: main
+      branch: config_yaml
     dockerfile_path: ./Dockerfile
     http_port: 3000
     routes:
@@ -16,7 +16,7 @@ services:
   - name: server
     github:
       repo: RyanO-K/RoboBanana
-      branch: main
+      branch: config_yaml
     dockerfile_path: ./server/Dockerfile
     http_port: 3000
     routes:
