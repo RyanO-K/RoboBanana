@@ -11,7 +11,7 @@ services:
     envs:
       - key: DISCORD_TOKEN
         scope: RUN_TIME
-        value: unknown
+        value: EV[1:xtfvR0n48A0EZlMkn8N8ZVn9qAsob4dD:ogalftuyv+N2AJFtuEJJnNtM53ZDEj5K87798hEIyNk58kuUbh42bNBfqwEgt20Sj/jRg90ZrsSTXReiZCzWpy7nEbyFMMUU0K7p33fgax4RVUJaRoM7zw==]
       - key: SERVER_TOKEN
         scope: RUN_TIME
         value: unknown
