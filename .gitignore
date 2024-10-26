@@ -9,3 +9,4 @@ __pycache__
 .env
 secrets.yaml
 config.yaml
+config.example.yaml
