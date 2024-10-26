@@ -93,7 +93,7 @@ from .models import (
     VodSubmission,
 )
 from config import YAMLConfig as Config
-
+import os
 
 class DB:
     __instance = None
@@ -111,7 +111,9 @@ class DB:
         self.__initialized = True
 
         username = Config.CONFIG["Database"]["Username"]
-        password = Config.CONFIG["Secrets"]["Database"]["Password"]
+        password = os.getenv(DATABASE_PASSWORD)
+        if not password or password == None:
+            LOG.ERROR("Invalid Database Password")
         db_host = Config.CONFIG["Database"]["Host"]
         db_name = Config.CONFIG["Database"]["Name"]
 
