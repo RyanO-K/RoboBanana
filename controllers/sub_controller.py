@@ -31,21 +31,17 @@ GUILD_ID = os.getenv("GuildID")
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_URL = f"{get_base_url()}/publish-sub"
 PUBLISH_COUNT_URL = f"{get_base_url()}/publish-sub-count"
-try:
-    PREMIUM_IDS = list(
-        map(
-            int,
-            [
-                os.getenv("ROLES_TIERONEROLE"),
-                os.getenv("ROLES_TIERTWOROLE"),
-                os.getenv("ROLES_TIERTHREEROLE"),
-            ],
-        )
+
+PREMIUM_IDS = list(
+    map(
+        int,
+        [
+            os.getenv("ROLES_TIERONEROLE"),
+            os.getenv("ROLES_TIERTWOROLE"),
+            os.getenv("ROLES_TIERTHREEROLE"),
+        ],
     )
-except TypeError:
-    LOG.error(os.getenv("ROLES_TIERONEROLE"))
-    LOG.error(os.getenv("ROLES_TIERTWOROLE"))
-    LOG.error(os.getenv("ROLES_TIERONEROLE"))
+)
 
 
 SubDurationReward = namedtuple("SubDurationReward", "duration role_id")

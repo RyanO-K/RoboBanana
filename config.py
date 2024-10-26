@@ -14,8 +14,8 @@ class Config:
 class YAMLConfig:
     LOG = logging.getLogger(__name__)
     CONFIG = dict()
-    LOG.error("RoleMod:")
-    LOG.error(os.getenv("ROLES_MOD"))
+    LOG.error("DISCORD_TOKEN:")
+    LOG.error(os.getenv("DISCORD_TOKEN"))
     # try:
     #     with open("/config.yaml") as config_file:
     #         CONFIG = yaml.safe_load(config_file)
