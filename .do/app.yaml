@@ -146,7 +146,7 @@ services:
         value: 0
       - key: MISC_VODREVIEWBANK
         scope: RUN_TIME
-        value: 0
+        value: 60
       - key: MISC_NICKNAMEQUEUE
         scope: RUN_TIME
         value: 0
