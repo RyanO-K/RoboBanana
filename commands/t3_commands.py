@@ -22,7 +22,7 @@ from views.rewards.redeem_tts_view import RedeemTTSView
 LOG = logging.getLogger(__name__)
 
 PUBLISH_URL = f"{get_base_url()}/publish-streamdeck"
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 
 
 class VoiceAI(enum.Enum):

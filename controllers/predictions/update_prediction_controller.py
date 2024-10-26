@@ -10,7 +10,7 @@ from util.server_utils import get_base_url
 import logging
 
 PUBLISH_URL = f"{get_base_url()}/publish-prediction"
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 LOG = logging.getLogger(__name__)
 
 

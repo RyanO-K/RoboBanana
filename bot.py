@@ -39,14 +39,14 @@ from util.discord_utils import DiscordUtils
 from util.server_utils import get_base_url
 from util.sync_utils import SyncUtils
 import re
-
+import os
 
 discord.utils.setup_logging(level=logging.INFO, root=True)
 
 COOL_URL = f"{get_base_url()}/publish-cool"
 COOL_ID = Config.CONFIG["Discord"]["CoolMeter"]["CoolEmoji"]
 UNCOOL_ID = Config.CONFIG["Discord"]["CoolMeter"]["UncoolEmoji"]
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
 WELCOME_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Welcome"]
 PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][
@@ -314,7 +314,7 @@ async def main():
     async with client:
         tree.add_command(SyncCommands(tree, client))
         SyncUtils.add_commands_to_tree(tree, client)
-        await client.start(Config.CONFIG["Secrets"]["Discord"]["Token"])
+        await client.start(os.getenv("DISCORD_TOKEN"))
 
 
 if __name__ == "__main__":

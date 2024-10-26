@@ -10,7 +10,7 @@ from discord.app_commands.errors import AppCommandError, CheckFailure
 
 PUBLISH_URL = f"{get_base_url()}/publish-vod"
 LOG = logging.getLogger(__name__)
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
 # these are hardcoded until raze to radiant is over, or config file changes are allowed
 # for testing on own setup, these need to be changed to your appropriate IDs

@@ -32,7 +32,7 @@ PUBLISH_URL = f"{get_base_url()}/publish-chat"
 discord.utils.setup_logging(level=logging.INFO, root=True)
 
 CACHE_HOST = Config.CONFIG["Server"]["Cache"]["Host"]
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 
 app = Quart(__name__)
 app = cors(app, allow_origin="*")

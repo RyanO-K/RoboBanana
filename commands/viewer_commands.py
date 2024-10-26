@@ -36,7 +36,7 @@ MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
 GIFTED_T2_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier2Role"]
 TEMPROLE_AUDIT_CHANNEL = 1225769539267199026
 
-AUTH_TOKEN = Config.CONFIG["Secrets"]["Server"]["Token"]
+AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 
 # It's stupid that it's here but I don't know how else to make it work
 ACTIVE_CHATTER_KEYWORD = None
