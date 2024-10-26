@@ -13,7 +13,7 @@ jobs:
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           keys: ${{ secrets.DEPLOY_KEY }}
-          username: ${{ secrets.DEPLOY_USERNAME}
+          username: ${{ secrets.DEPLOY_USERNAME }}
           password: $${{  secrets.PASSKEY }}
           repository: RyanO-K/RoboBanana
           tag_withref: true
