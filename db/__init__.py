@@ -96,6 +96,7 @@ from config import YAMLConfig as Config
 import os
 import logging
 
+
 class DB:
     __instance = None
 
