@@ -18,7 +18,7 @@ STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
 BOT_AUDIT_CHANNEL = os.getenv("CHANNEL_CHANNELPOINTS")
 SIX_MONTH_TIER_3_ROLE_ID = os.getenv("ROLES_6MONTHROLE")
 TWELVE_MONTH_TIER_3_ROLE_ID = os.getenv("ROLES_12MONTHROLE")
-TIER_3_ROLE_ID = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
+TIER_3_ROLE_ID = os.getenv("ROLES_TIERTHREEROLE")
 EIGHTEEN_MONTH_TIER_3_ROLE_ID = os.getenv("ROLES_18MONTHROLE")
 GIFTED_TIER_3_ROLE_ID = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
 TWITCH_TIER_3_ROLE_ID = os.getenv("ROLES_TIERTWITCHTHREEROLE")
@@ -29,16 +29,22 @@ GUILD_ID = os.getenv("GuildID")
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_URL = f"{get_base_url()}/publish-sub"
 PUBLISH_COUNT_URL = f"{get_base_url()}/publish-sub-count"
+try:
 PREMIUM_IDS = list(
     map(
         int,
         [
             os.getenv("ROLES_TIERONEROLE"),
             os.getenv("ROLES_TIERTWOROLE"),
-            os.getenv("SUBSCRIBERS_TIERTHREEROLE"),
+            os.getenv("ROLES_TIERTHREEROLE"),
         ],
     )
 )
+except TypeError:
+    LOG.error(os.getenv("ROLES_TIERONEROLE"))
+    LOG.error(os.getenv("ROLES_TIERTWOROLE"))
+    LOG.error(os.getenv("ROLES_TIERONEROLE"))
+
 
 SubDurationReward = namedtuple("SubDurationReward", "duration role_id")
 

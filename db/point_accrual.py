@@ -18,7 +18,7 @@ ROLE_MULTIPLIERS: dict[str, int] = {
     os.getenv("ROLES_GOODMORNING"): 2,  # T2 GM Role
     os.getenv("ROLES_TIERTWOROLE"): 3,
     os.getenv("ROLES_GIFTEDTIERTWOROLE"): 3,
-    os.getenv("SUBSCRIBERS_TIERTHREEROLE"): 4,
+    os.getenv("ROLES_TIERTHREEROLE"): 4,
     os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE"): 4,
 }
 

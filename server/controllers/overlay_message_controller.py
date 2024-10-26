@@ -46,7 +46,7 @@ class OverlayMessageController:
 
         # Ugly check for T3 subs for now, feature is not complete and I don't want
         # to deal with the army of users explaining to me why it's 'broken'
-        t3_role = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
+        t3_role = os.getenv("ROLES_TIERTHREEROLE")
         gifted_t3_role = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
         twitch_t3_role = os.getenv("ROLES_TIERTWITCHTHREEROLE")
 

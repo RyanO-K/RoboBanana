@@ -50,7 +50,7 @@ class EmoteAnimation(enum.Enum):
     Fireworks = "fireworks"
 
 
-T3_ROLE = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
+T3_ROLE = os.getenv("ROLES_TIERTHREEROLE")
 GIFTED_T3_ROLE = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
 TWITCH_T3_ROLE = os.getenv("ROLES_TIERTWITCHTHREEROLE")
 
