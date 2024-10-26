@@ -43,9 +43,9 @@ PREMIUM_IDS = list(
     map(
         get_role,
         [
-            os.getenv("ROLES_TIERONEROLE"),
-            os.getenv("ROLES_TIERTWOROLE"),
-            os.getenv("ROLES_TIERTHREEROLE"),
+            "ROLES_TIERONEROLE",
+            "ROLES_TIERTWOROLE",
+            "ROLES_TIERTHREEROLE",
         ],
     )
 )
