@@ -6,7 +6,7 @@ import requests
 from config import YAMLConfig as Config
 from controllers.connect_four.connect_four_controller import ConnectFourController
 from discord.app_commands.errors import AppCommandError, CheckFailure
-
+import os
 from controllers.connect_four.game_orchestrator import GameOrchestrator
 from util.server_utils import get_base_url
 

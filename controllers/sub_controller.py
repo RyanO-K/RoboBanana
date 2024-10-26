@@ -12,7 +12,7 @@ import logging
 import requests
 from datetime import datetime
 import pytz
-
+import os
 STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
 BOT_AUDIT_CHANNEL = Config.CONFIG["Discord"]["ChannelPoints"]["PointsAuditChannel"]
 SIX_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["6MonthTier3Role"]

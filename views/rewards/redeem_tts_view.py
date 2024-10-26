@@ -1,7 +1,7 @@
 from discord import Client, SelectOption, Interaction, TextStyle
 from discord.ui import View, Select, TextInput, Modal
 from controllers.point_history_controller import PointHistoryController
-
+import os
 import requests
 from threading import Thread
 from util.server_utils import get_base_url

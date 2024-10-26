@@ -22,7 +22,7 @@ from quart import Quart
 from config import YAMLConfig as Config
 from twitch_chat_irc import twitch_chat_irc
 from util.server_utils import get_base_url
-
+import os
 import requests
 import discord
 import logging

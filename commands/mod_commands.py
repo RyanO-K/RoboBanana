@@ -34,7 +34,7 @@ import random
 from threading import Thread
 import requests
 import enum
-
+import os 
 LOG = logging.getLogger(__name__)
 JOEL_DISCORD_ID = 112386674155122688
 HOOJ_DISCORD_ID = 82969926125490176
