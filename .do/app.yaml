@@ -44,10 +44,10 @@ services:
         value: 1299519917116362863
       - key: ROLES_HIDDENMOD
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_STAFFDEV
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_MOD
         scope: RUN_TIME
         value: 1299518844251144254
@@ -56,37 +56,37 @@ services:
         value: 1299543716394176577
       - key: ROLES_CMCHATMODERATOR
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: VODREVIEW_APPROVED
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: VODREVIEW_REJECTED
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_APPROVEDVOD
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_REJECTEDVOD
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_VODREVIEWER
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_TRUSTWORTHY
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_12MONTHROLE
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_18MONTHROLE
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_TIERTWITCHTHREEROLE
         scope: RUN_TIME
         value: 1299519917116362863
       - key: CHANNEL_CHANNELPOINTS
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: ROLES_TIERTWOROLE
         scope: RUN_TIME
         value: 1299519906001195058
@@ -95,13 +95,13 @@ services:
         value: 1299519886745141319
       - key: CHANNEL_PREDICTIONSAUDIT
         scope: RUN_TIME
-        value: 0
+        value: 1
       - key: CROWDMUTE_DURATION
         scope: RUN_TIME
-        value: 0
+        value: 90
       - key: CROWDMUTE_THRESHOLD
         scope: RUN_TIME
-        value: 0
+        value: 15
       - key: ROLES_GIFTEDTIERTWOROLE
         scope: RUN_TIME
         value: 0
