@@ -10,14 +10,14 @@ LOG = logging.getLogger(__name__)
 
 class Config:
     CONFIG = configparser.ConfigParser()
-    CONFIG.read(os.path.join(os.path.dirname(__file__), "config.ini"))
+    CONFIG.read("root/config.ini")
 
 
 class YAMLConfig:
     CONFIG = dict()
     try:
         with open(
-            os.path.join(os.path.dirname(__file__), "config.yaml")
+            "root/config.yaml"
         ) as config_file:
             CONFIG = yaml.safe_load(config_file)
     except FileNotFoundError:
@@ -34,7 +34,7 @@ class YAMLConfig:
     try:
         if CONFIG is not None:
             with open(
-                os.path.join(os.path.dirname(__file__), "secrets.yaml")
+                "root/config.yaml"
             ) as secrets_file:
                 CONFIG["Secrets"] = yaml.safe_load(secrets_file)
     except FileNotFoundError:
