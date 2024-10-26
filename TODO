@@ -2,4 +2,5 @@
 2. Get auto deploy running
 3. Get Database running
     3b. rework database naming
-4. Get frontend running
+4. Create a Config python file that can be imported
+5. Get frontend running

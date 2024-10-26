@@ -134,7 +134,7 @@ services:
         value: woohoojinuser
       - key: DATABASE_HOST
         scope: RUN_TIME
-        value: 0
+        value: '%'
       - key: DATABASE_NAME
         scope: RUN_TIME
         value: woohoojin
