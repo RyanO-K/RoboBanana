@@ -112,7 +112,7 @@ class DB:
         self.__initialized = True
 
         username = Config.CONFIG["Database"]["Username"]
-        password = os.getenv(DATABASE_PASSWORD)
+        password = os.getenv("DATABASE_PASSWORD")
         if not password or password == None:
             LOG.ERROR("Invalid Database Password")
         db_host = Config.CONFIG["Database"]["Host"]
