@@ -8,6 +8,7 @@ from threading import Thread
 from db import DB
 from util.server_utils import get_base_url
 import logging
+import os
 
 PUBLISH_URL = f"{get_base_url()}/publish-prediction"
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")

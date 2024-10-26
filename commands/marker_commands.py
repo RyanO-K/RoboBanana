@@ -8,7 +8,7 @@ import requests
 from config import YAMLConfig as Config
 import logging
 from discord.app_commands.errors import AppCommandError, CheckFailure
-
+import os
 from util.command_utils import CommandUtils
 
 LOG = logging.getLogger(__name__)

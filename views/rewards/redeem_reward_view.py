@@ -1,7 +1,7 @@
 from discord import Client, SelectOption, Interaction
 from discord.ui import View, Select
 from controllers.point_history_controller import PointHistoryController
-
+import os
 from db import DB
 from db.models import ChannelReward
 from config import YAMLConfig as Config

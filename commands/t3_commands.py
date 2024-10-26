@@ -7,7 +7,7 @@ from discord import (
 )
 from discord.app_commands.errors import AppCommandError, CheckFailure
 import enum
-
+import os
 import requests
 
 from controllers.point_history_controller import PointHistoryController

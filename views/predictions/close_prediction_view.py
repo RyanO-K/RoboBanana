@@ -5,7 +5,7 @@ from controllers.predictions.close_prediction_controller import (
 )
 from db import DB
 from config import YAMLConfig as Config
-
+import os
 from .payout_prediction_view import PayoutPredictionView
 from .close_prediction_embed import ClosePredictionEmbed
 from .prediction_embed import PredictionEmbed

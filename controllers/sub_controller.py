@@ -12,6 +12,7 @@ import logging
 import requests
 from datetime import datetime
 import pytz
+import os
 
 STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
 BOT_AUDIT_CHANNEL = os.getenv("CHANNEL_CHANNELPOINTS")

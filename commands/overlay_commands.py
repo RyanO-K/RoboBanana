@@ -10,7 +10,7 @@ import logging
 from enum import Enum
 from discord.app_commands.errors import AppCommandError, CheckFailure
 from config import YAMLConfig as Config
-
+import os
 from controllers.overlay_controller import OverlayController
 from views.overlay.configure_modal import OverlayConfigurationModal
 

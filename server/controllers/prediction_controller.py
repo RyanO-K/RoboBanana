@@ -12,7 +12,7 @@ from config import YAMLConfig as Config
 import logging
 from db import DB
 from db.models import PredictionChoice
-
+import os
 from server.models.quick_prediction import QuickPrediction
 
 GUILD_ID = os.getenv("GuildID")

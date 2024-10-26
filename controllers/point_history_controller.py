@@ -1,6 +1,7 @@
 from models.transaction import Transaction
 from db import DB
 from config import YAMLConfig as Config
+import os
 
 MAXIMUM_TRANSACTIONS = os.getenv("POINTS_MAXTRANSACTION")
 

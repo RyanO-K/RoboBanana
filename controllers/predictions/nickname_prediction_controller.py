@@ -5,6 +5,7 @@ from typing import Dict
 from discord import Forbidden, Guild, Member
 from config import YAMLConfig as Config
 from discord.ext import tasks
+import os
 
 LOG = logging.getLogger(__name__)
 MAX_QUEUE_SIZE = os.getenv("MISC_NICKNAMEQUEUE")

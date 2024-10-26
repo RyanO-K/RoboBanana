@@ -2,7 +2,7 @@ from discord import AllowedMentions, ChannelType, TextStyle, Interaction, Client
 from discord.ui import Modal, TextInput
 import logging
 from config import YAMLConfig as Config
-
+import os
 from controllers.predictions.create_prediction_controller import (
     CreatePredictionController,
 )

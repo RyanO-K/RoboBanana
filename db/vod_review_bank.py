@@ -3,6 +3,7 @@ from db.models import VODReviewBank
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select, insert, update
 from config import YAMLConfig as Config
+import os
 
 HOURS_PER_REVIEW = os.getenv("MISC_VODREVIEWBANK")
 

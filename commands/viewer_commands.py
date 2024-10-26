@@ -21,7 +21,7 @@ from pytz import timezone
 from config import YAMLConfig as Config
 from discord.app_commands.errors import AppCommandError, CheckFailure
 from util.server_utils import get_base_url
-
+import os
 from views.vod_submission.vod_submission_modal import NewVodSubmissionModal
 
 LOG = logging.getLogger(__name__)

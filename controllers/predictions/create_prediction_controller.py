@@ -8,7 +8,7 @@ from config import YAMLConfig as Config
 import logging
 from views.predictions.close_prediction_embed import ClosePredictionEmbed
 from views.predictions.close_prediction_view import ClosePredictionView
-
+import os
 from views.predictions.prediction_embed import PredictionEmbed
 from views.predictions.prediction_view import PredictionView
 

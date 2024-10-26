@@ -1,7 +1,7 @@
 import logging
 from discord import Colour, Embed, Role, app_commands, Interaction, Client, User, utils
 from config import YAMLConfig as Config
-
+import os
 from controllers.temprole_controller import TempRoleController
 from util.discord_utils import DiscordUtils
 from discord.app_commands.errors import AppCommandError, CheckFailure

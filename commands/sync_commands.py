@@ -6,6 +6,7 @@ from config import YAMLConfig as Config
 from util.sync_utils import SyncUtils
 import logging
 from discord.app_commands.errors import AppCommandError, CheckFailure
+import os
 
 LOG = logging.getLogger(__name__)
 

@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select, update, insert
 from zoneinfo import ZoneInfo
-
+import os
 from db.models import MorningPoints
 from config import YAMLConfig as Config
 

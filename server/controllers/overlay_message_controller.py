@@ -6,7 +6,7 @@ from server.util.discord_client import DISCORD_CLIENT
 import logging
 import requests
 from discord import AllowedMentions
-
+import os
 from util.server_utils import get_base_url
 
 LOG = logging.getLogger(__name__)

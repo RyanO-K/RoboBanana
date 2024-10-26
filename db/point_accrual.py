@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from datetime import timedelta, datetime
 from config import YAMLConfig as Config
 from discord import Role
-
+import os
 import discord
 
 MIN_ACCRUAL_TIME = timedelta(minutes=15)

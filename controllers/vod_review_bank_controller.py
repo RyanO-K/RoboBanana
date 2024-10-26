@@ -6,7 +6,7 @@ from controllers.temprole_controller import TempRoleController
 from db import DB
 from pytimeparse.timeparse import timeparse
 import logging
-
+import os
 from util.discord_utils import DiscordUtils
 
 LOG = logging.getLogger(__name__)

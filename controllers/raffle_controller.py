@@ -6,6 +6,7 @@ from commands.overlay_commands import LOG
 from db import DB, RaffleEntry, RaffleType
 from config import YAMLConfig as Config
 import random
+import os
 
 VOD_APPROVED_ROLE_ID = os.getenv("ROLES_APPROVEDVOD")
 VOD_SUBMISSION_CHANNEL_ID = os.getenv("CHANNEL_VODSUBMIT")

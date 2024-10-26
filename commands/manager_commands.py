@@ -1,5 +1,6 @@
 from copy import copy
 from typing import Optional
+import os
 from discord import (
     Color,
     Embed,

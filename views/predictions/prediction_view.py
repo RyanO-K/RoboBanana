@@ -4,7 +4,7 @@ from discord.ui import View, Button
 from db import DB
 from config import YAMLConfig as Config
 from db.models import PredictionChoice
-
+import os
 from .prediction_embed import PredictionEmbed
 from .prediction_vote_modal import PredictionVoteModal
 

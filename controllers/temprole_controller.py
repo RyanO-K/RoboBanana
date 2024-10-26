@@ -10,6 +10,7 @@ from db import DB
 from config import YAMLConfig as Config
 from util.discord_utils import DiscordUtils
 from views.pagination.pagination_embed_view import PaginationEmbed, PaginationView
+import os
 
 EXPIRATION_CHECK_CADENCE = os.getenv("MISC_VODREVIEWBANK")
 APPROVED_ROLE = os.getenv("ROLES_APPROVEDVOD")

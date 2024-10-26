@@ -9,7 +9,7 @@ from discord import (
 )
 from config import YAMLConfig as Config
 from discord.app_commands.errors import AppCommandError, CheckFailure
-
+import os
 from controllers.point_history_controller import PointHistoryController
 from db.models import PointsHistory
 

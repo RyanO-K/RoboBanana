@@ -93,7 +93,7 @@ from .models import (
     VodSubmission,
 )
 from config import YAMLConfig as Config
-
+import os
 
 class DB:
     __instance = None

@@ -2,7 +2,7 @@ import logging
 from discord import Client, ClientUser, Intents, Message
 
 from server.blueprints.chat import publish_chat, publish_chat_simple
-
+import os
 from config import YAMLConfig as Config
 import re
 

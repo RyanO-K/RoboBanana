@@ -2,7 +2,7 @@ import logging
 from discord import app_commands, Interaction, Client
 import random
 from discord.app_commands.errors import AppCommandError, CheckFailure
-
+import os
 from config import YAMLConfig as Config
 
 HOOJ_DISCORD_ID = 82969926125490176

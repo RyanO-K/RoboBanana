@@ -7,6 +7,7 @@ from db import DB
 from discord.app_commands.errors import AppCommandError, CheckFailure
 from controllers import reaction_controller
 from util.discord_utils import DiscordUtils
+import os
 
 LOG = logging.getLogger(__name__)
 

@@ -20,6 +20,7 @@ from db.models import PredictionChoice, PredictionOutcome
 from views.predictions.create_predictions_modal import CreatePredictionModal
 from config import YAMLConfig as Config
 import logging
+import os
 
 LOG = logging.getLogger(__name__)
 JOEL_DISCORD_ID = 112386674155122688

@@ -7,6 +7,7 @@ from util.server_utils import get_base_url
 import requests
 import logging
 from discord.app_commands.errors import AppCommandError, CheckFailure
+import os
 
 PUBLISH_URL = f"{get_base_url()}/publish-vod"
 LOG = logging.getLogger(__name__)
