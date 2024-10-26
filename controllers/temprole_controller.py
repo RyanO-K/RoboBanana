@@ -12,7 +12,10 @@ from util.discord_utils import DiscordUtils
 from views.pagination.pagination_embed_view import PaginationEmbed, PaginationView
 import os
 
-EXPIRATION_CHECK_CADENCE = int(os.getenv("MISC_VODREVIEWBANK"))
+try:
+    EXPIRATION_CHECK_CADENCE = int(os.getenv("MISC_VODREVIEWBANK"))
+except TypeError:
+    LOG.error("MISC_VODREVIEWBANK: " + os.getenv("MISC_VODREVIEWBANK"))
 APPROVED_ROLE = os.getenv("ROLES_APPROVEDVOD")
 REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
 # this is hardcoded until raze to radiant is over, or config file changes are allowed
