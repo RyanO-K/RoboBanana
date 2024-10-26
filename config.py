@@ -15,7 +15,7 @@ class Config:
 
 class YAMLConfig:
     CONFIG = dict()
-    logging.ERROR(os.getenv(ROLES_MOD))
+    logging.ERROR(os.getenv("ROLES_MOD"))
     # try:
     #     with open("/config.yaml") as config_file:
     #         CONFIG = yaml.safe_load(config_file)
