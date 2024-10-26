@@ -17,7 +17,8 @@ EXPIRATION_CHECK_CADENCE = None
 try:
     EXPIRATION_CHECK_CADENCE = int(os.getenv("MISC_VODREVIEWBANK"))
 except TypeError:
-    LOG.error("MISC_VODREVIEWBANK: " + os.getenv("MISC_VODREVIEWBANK"))
+    LOG.error("MISC_VODREVIEWBANK: ")
+    LOG.error(os.getenv("MISC_VODREVIEWBANK"))
 APPROVED_ROLE = os.getenv("ROLES_APPROVEDVOD")
 REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
 # this is hardcoded until raze to radiant is over, or config file changes are allowed
