@@ -25,8 +25,6 @@ REJECTED_ROLE = os.getenv("ROLES_REJECTEDVOD")
 TOP_ROLE_ACCEPTED = 1077265826886979634
 
 
-
-
 class TempRoleController:
     def __init__(self, client: Client):
         self.client = client
