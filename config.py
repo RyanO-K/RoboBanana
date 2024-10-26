@@ -26,6 +26,7 @@ class YAMLConfig:
             ) as secrets_file:
                 CONFIG["Secrets"] = yaml.safe_load(secrets_file)
     except FileNotFoundError:
+        LOG.error(FileNotFoundError)
         LOG.error(
             "Failed to load YAML config. "
             "Please make sure you've used config_converter.py "
