@@ -8,9 +8,7 @@ from db.models import PredictionChoice
 from .prediction_embed import PredictionEmbed
 from .prediction_vote_modal import PredictionVoteModal
 
-PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][
-    "PendingRewardChannel"
-]
+PENDING_REWARDS_CHAT_ID = os.getenv("CHANNEL_PENDINGREWARDCHANNEL")
 
 
 class PredictionView(View):

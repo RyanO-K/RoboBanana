@@ -13,21 +13,21 @@ import requests
 from datetime import datetime
 import pytz
 
-STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
+STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
 BOT_AUDIT_CHANNEL = Config.CONFIG["Discord"]["ChannelPoints"]["PointsAuditChannel"]
 SIX_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["6MonthTier3Role"]
 TWELVE_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"][
     "12MonthTier3Role"
 ]
-TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["Tier3Role"]
+TIER_3_ROLE_ID = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
 EIGHTEEN_MONTH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"][
     "18MonthTier3Role"
 ]
-GIFTED_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier3Role"]
+GIFTED_TIER_3_ROLE_ID = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
 TWITCH_TIER_3_ROLE_ID = Config.CONFIG["Discord"]["Subscribers"]["TwitchTier3Role"]
 NA_OPEN_INHOUSE_CHANNEL_ID = Config.CONFIG["Discord"]["Inhouses"]["NAOpenChannel"]
 EU_OPEN_INHOUSE_CHANNEL_ID = Config.CONFIG["Discord"]["Inhouses"]["EUOpenChannel"]
-GUILD_ID = Config.CONFIG["Discord"]["GuildID"]
+GUILD_ID = os.getenv("GuildID")
 
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_URL = f"{get_base_url()}/publish-sub"
@@ -38,7 +38,7 @@ PREMIUM_IDS = list(
         [
             Config.CONFIG["Discord"]["Subscribers"]["Tier1Role"],
             Config.CONFIG["Discord"]["Subscribers"]["Tier2Role"],
-            Config.CONFIG["Discord"]["Subscribers"]["Tier3Role"],
+            os.getenv("SUBSCRIBERS_TIERTHREEROLE"),
         ],
     )
 )

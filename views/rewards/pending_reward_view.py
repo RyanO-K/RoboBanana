@@ -7,7 +7,7 @@ from db.models import ChannelReward
 from config import YAMLConfig as Config
 from models.transaction import Transaction
 
-STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
+STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
 
 
 class PendingRewardView(View):

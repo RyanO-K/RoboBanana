@@ -31,7 +31,7 @@ PUBLISH_POLL_URL = f"{get_base_url()}/publish-poll-answer"
 POKEMON_PUBLISH_URL = f"{get_base_url()}/publish-streamdeck"
 
 HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
-STAFF_DEVELOPER_ROLE = Config.CONFIG["Discord"]["Roles"]["StaffDev"]
+STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
 GIFTED_T2_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier2Role"]
 TEMPROLE_AUDIT_CHANNEL = 1225769539267199026

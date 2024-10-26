@@ -50,12 +50,12 @@ class EmoteAnimation(enum.Enum):
     Fireworks = "fireworks"
 
 
-T3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier3Role"]
-GIFTED_T3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier3Role"]
+T3_ROLE = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
+GIFTED_T3_ROLE = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
 TWITCH_T3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["TwitchTier3Role"]
 
 HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
-STAFF_DEVELOPER_ROLE = Config.CONFIG["Discord"]["Roles"]["StaffDev"]
+STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
 
 T3_TTS_ENABLED = True

@@ -10,10 +10,8 @@ from models.transaction import Transaction
 from .pending_reward_view import PendingRewardView
 
 
-STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
-PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][
-    "PendingRewardChannel"
-]
+STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
+PENDING_REWARDS_CHAT_ID = os.getenv("CHANNEL_PENDINGREWARDCHANNEL")
 
 
 class RedeemRewardView(View):

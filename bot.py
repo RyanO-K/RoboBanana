@@ -44,21 +44,19 @@ import re
 discord.utils.setup_logging(level=logging.INFO, root=True)
 
 COOL_URL = f"{get_base_url()}/publish-cool"
-COOL_ID = Config.CONFIG["Discord"]["CoolMeter"]["CoolEmoji"]
-UNCOOL_ID = Config.CONFIG["Discord"]["CoolMeter"]["UncoolEmoji"]
+COOL_ID = os.getenv("COOLMETER_COOLEMOJI")
+UNCOOL_ID = os.getenv("COOLMETER_UNCOOLEMOJI")
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
-STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
-WELCOME_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Welcome"]
-PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][
-    "PendingRewardChannel"
-]
-GUILD_ID = Config.CONFIG["Discord"]["GuildID"]
-TIER3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier3Role"]
-GIFTED_TIER3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier3Role"]
+STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
+WELCOME_CHAT_ID = os.getenv("CHANNEL_WELCOME")
+PENDING_REWARDS_CHAT_ID = 
+GUILD_ID = os.getenv("GuildID")
+TIER3_ROLE = os.getenv("ROLES_TIERTHREEROLE")
+GIFTED_TIER3_ROLE = os.getenv("ROLES_GIFTEDTIERTHREEROLE")
 # HIDDEN_MOD_ROLE should be 1040337265790042172 when committing and refers to the Mod (Role Hidden)
 # STAFF_DEVELOPER_ROLE should be 1226317841272279131 when committing and refers to the Staff Developer role
 HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
-STAFF_DEVELOPER_ROLE = Config.CONFIG["Discord"]["Roles"]["StaffDev"]
+STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 FOSSA_BOT_ID = 488164251249279037
 SERVER_SUBSCRIPTION_MESSAGE_TYPE = 25
 CUSTOM_EMOJI_PATTERN = re.compile("(<a?:(\w+):\d{17,19}>?)")

@@ -14,7 +14,7 @@ LOG = logging.getLogger(__name__)
 DISCORD_IDENTITY_ENDPOINT = "https://discord.com/api/v10/users/@me"
 EXPIRES_IN = 604800
 USER_ID_CACHE = dict()
-GUILD_ID = Config.CONFIG["Discord"]["GuildID"]
+GUILD_ID = os.getenv("GuildID")
 PUBLISH_URL = f"{get_base_url()}/publish-chat"
 
 
@@ -46,8 +46,8 @@ class OverlayMessageController:
 
         # Ugly check for T3 subs for now, feature is not complete and I don't want
         # to deal with the army of users explaining to me why it's 'broken'
-        t3_role = Config.CONFIG["Discord"]["Subscribers"]["Tier3Role"]
-        gifted_t3_role = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier3Role"]
+        t3_role = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
+        gifted_t3_role = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
         twitch_t3_role = Config.CONFIG["Discord"]["Subscribers"]["TwitchTier3Role"]
 
         valid_roles = [t3_role, gifted_t3_role, twitch_t3_role]
@@ -81,7 +81,7 @@ class OverlayMessageController:
             "platform": "overlay",
         }
 
-        # stream_channel = Config.CONFIG["Discord"]["Channels"]["Stream"]
+        # stream_channel = os.getenv("CHANNEL_STREAM")
         # await DISCORD_CLIENT.get_channel(stream_channel).send(
         #     f"[<@{user_id}>] {message.replace('@', '')}",
         #     suppress_embeds=True,

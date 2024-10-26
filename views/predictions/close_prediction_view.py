@@ -11,10 +11,8 @@ from .close_prediction_embed import ClosePredictionEmbed
 from .prediction_embed import PredictionEmbed
 from .prediction_view import PredictionView
 
-STREAM_CHAT = Config.CONFIG["Discord"]["Channels"]["Stream"]
-PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][
-    "PendingRewardChannel"
-]
+STREAM_CHAT = os.getenv("CHANNEL_STREAM")
+PENDING_REWARDS_CHAT_ID = os.getenv("CHANNEL_PENDINGREWARDCHANNEL")
 PREDICTION_AUDIT_CHANNEL = Config.CONFIG["Discord"]["Predictions"]["AuditChannel"]
 
 

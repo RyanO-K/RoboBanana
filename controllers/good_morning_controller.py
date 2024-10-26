@@ -11,7 +11,7 @@ from discord.ext import tasks
 
 LOG = logging.getLogger(__name__)
 
-STREAM_CHAT_ID = Config.CONFIG["Discord"]["Channels"]["Stream"]
+STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
 REWARD_ROLE_ID = Config.CONFIG["Discord"]["GoodMorning"]["RewardRole"]
 REWARD_REDEMPTION_CHANNEL_ID = Config.CONFIG["Discord"]["GoodMorning"][
     "RedemptionChannel"
@@ -124,7 +124,7 @@ class GoodMorningController:
             LOG.info("[AUTO GM TASK] No users to reward")
             return
 
-        guild = self.client.get_guild(Config.CONFIG["Discord"]["GuildID"])
+        guild = self.client.get_guild(os.getenv("GuildID"))
         reward_role = guild.get_role(REWARD_ROLE_ID)
         progres_channel = guild.get_channel(REWARD_PROGRESS_CHANNEL)
 

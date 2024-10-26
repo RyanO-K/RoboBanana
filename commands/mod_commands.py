@@ -41,15 +41,15 @@ HOOJ_DISCORD_ID = 82969926125490176
 POINTS_AUDIT_CHANNEL = Config.CONFIG["Discord"]["ChannelPoints"]["PointsAuditChannel"]
 TIER1_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier1Role"]
 TIER2_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier2Role"]
-TIER3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["Tier3Role"]
+TIER3_ROLE = os.getenv("SUBSCRIBERS_TIERTHREEROLE")
 BOT_ROLE = Config.CONFIG["Discord"]["Roles"]["Bot"]
 GIFTED_TIER1_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier1Role"]
-GIFTED_TIER3_ROLE = Config.CONFIG["Discord"]["Subscribers"]["GiftedTier3Role"]
+GIFTED_TIER3_ROLE = os.getenv("SUBSCRIBERS_GIFTEDTIERTHREEROLE")
 MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["Mod"]
 HIDDEN_MOD_ROLE = Config.CONFIG["Discord"]["Roles"]["HiddenMod"]
-STAFF_DEVELOPER_ROLE = Config.CONFIG["Discord"]["Roles"]["StaffDev"]
+STAFF_DEVELOPER_ROLE = os.getenv("ROLES_STAFFDEV")
 
-GUILD_ID = Config.CONFIG["Discord"]["GuildID"]
+GUILD_ID = os.getenv("GuildID")
 
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
 PUBLISH_POLL_URL = f"{get_base_url()}/publish-poll"

@@ -12,9 +12,7 @@ from views.predictions.close_prediction_view import ClosePredictionView
 from views.predictions.prediction_embed import PredictionEmbed
 from views.predictions.prediction_view import PredictionView
 
-PENDING_REWARDS_CHAT_ID = Config.CONFIG["Discord"]["ChannelPoints"][
-    "PendingRewardChannel"
-]
+PENDING_REWARDS_CHAT_ID = os.getenv("CHANNEL_PENDINGREWARDCHANNEL")
 
 LOG = logging.getLogger(__name__)
 
