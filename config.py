@@ -16,9 +16,7 @@ class Config:
 class YAMLConfig:
     CONFIG = dict()
     try:
-        with open(
-            "root/config.yaml"
-        ) as config_file:
+        with open("root/config.yaml") as config_file:
             CONFIG = yaml.safe_load(config_file)
     except FileNotFoundError:
         LOG.error(listdir())
@@ -33,9 +31,7 @@ class YAMLConfig:
 
     try:
         if CONFIG is not None:
-            with open(
-                "root/config.yaml"
-            ) as secrets_file:
+            with open("root/config.yaml") as secrets_file:
                 CONFIG["Secrets"] = yaml.safe_load(secrets_file)
     except FileNotFoundError:
         LOG.error(listdir())
