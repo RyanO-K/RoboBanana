@@ -1,4 +1,4 @@
-name: PullRoboFishIn
+name: robofish
 services:
 - name: robofish
   envs:
