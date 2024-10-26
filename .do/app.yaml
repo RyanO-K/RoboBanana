@@ -1,28 +1,25 @@
 name: robofishbot
 services:
   - name: bot
-    environment_slug: docker
     github:
       repo: RyanO-K/RoboBanana
       branch: main
-    build_command: docker build -t robofishbot .
+    dockerfile_path: ./Dockerfile
     envs:
       - key: SOME_SECRET
         scope: RUN_TIME
         value: ${SOME_SECRET_FROM_REPOSITORY}
 
   - name: server
-    environment_slug: docker
     github:
       repo: RyanO-K/RoboBanana
       branch: main
-    build_command: docker build -t robofishbot-server -f ./server/Dockerfile .
+    dockerfile_path: ./server/Dockerfile
     http_port: 3000
 
   - name: cache
     image:
       registry_type: DOCKER_HUB
-      registry: redis
       repository: redis
       tag: alpine
     http_port: 6379
