@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build and push Docker images
+        uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           keys: ${{ secrets.DEPLOY_KEY }}
