@@ -14,7 +14,7 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           keys: ${{ secrets.DEPLOY_KEY }}
           username: ${{ secrets.DEPLOY_USERNAME }}
-          password: $${{  secrets.PASSKEY }}
+          password: ${{  secrets.PASSKEY }}
           repository: RyanO-K/RoboBanana
           tag_withref: true
           tag with sha: true
