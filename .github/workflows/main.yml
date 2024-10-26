@@ -1,0 +1,38 @@
+name: Staging deployment
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v2
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{   secrets.DOCKERHUB_USERNAME }}
+          password: $${{  secrets.DOCKERHUB_PASSWORD }}
+          repository: RyanO-K/RoboBanana
+          tag_withref: true
+          tag with sha: true
+
+  deploy:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -  name: Checkout files
+         uses: actions/checkout@v2
+      -  name: Checkout files
+         uses: actions/checkout@v2
+
+      -  name: Provision Droplet and deploy container
+         uses: doctl comput droplet create "Fresh" --image docker-18-04
