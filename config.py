@@ -1,4 +1,5 @@
 import configparser
+from os import listdir
 import yaml
 import os.path
 import logging
@@ -20,7 +21,7 @@ class YAMLConfig:
         ) as config_file:
             CONFIG = yaml.safe_load(config_file)
     except FileNotFoundError:
-        LOG.error(FileNotFoundError)
+        LOG.error(listdir())
         LOG.error(
             "Failed to load YAML config. "
             "Please make sure you've used config_converter.py "
@@ -37,7 +38,7 @@ class YAMLConfig:
             ) as secrets_file:
                 CONFIG["Secrets"] = yaml.safe_load(secrets_file)
     except FileNotFoundError:
-        LOG.error(FileNotFoundError)
+        LOG.error(listdir())
         LOG.error(
             "Failed to load YAML config. "
             "Please make sure you've used config_converter.py "
