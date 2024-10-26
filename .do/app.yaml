@@ -1,6 +1,6 @@
-name: sample
+name: Pull RoboFish in
 services:
-- name: sample
+- name: robofish
   envs:
   - key: SOME_SECRET
     value: ${SOME_SECRET_FROM_REPOSITORY} # TODO - BRING SECRETS.YAML OVER
