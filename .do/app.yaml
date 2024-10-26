@@ -14,7 +14,7 @@ services:
         value: ${SOME_SECRET_FROM_REPOSITORY}
     configs:
       - source: robobanana-config
-        target: /path/to/config.yaml
+        target: /config.yaml
 
   - name: server
     github:
@@ -26,7 +26,7 @@ services:
       - path: /server
     configs:
       - source: robobanana-config
-        target: /path/to/config.yaml
+        target: /config.yaml
 
 
   - name: cache

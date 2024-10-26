@@ -10,13 +10,13 @@ LOG = logging.getLogger(__name__)
 
 class Config:
     CONFIG = configparser.ConfigParser()
-    CONFIG.read("root/config.ini")
+    CONFIG.read("/config.ini")
 
 
 class YAMLConfig:
     CONFIG = dict()
     try:
-        with open("root/config.yaml") as config_file:
+        with open("/config.yaml") as config_file:
             CONFIG = yaml.safe_load(config_file)
     except FileNotFoundError:
         LOG.error(listdir())
