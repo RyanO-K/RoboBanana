@@ -13,6 +13,7 @@ import requests
 from datetime import datetime
 import pytz
 import os
+LOG = logging.getLogger(__name__)
 
 STREAM_CHAT_ID = os.getenv("CHANNEL_STREAM")
 BOT_AUDIT_CHANNEL = os.getenv("CHANNEL_CHANNELPOINTS")
@@ -58,7 +59,6 @@ SUB_DURATION_REWARDS = sorted(
     reverse=True,
 )
 
-LOG = logging.getLogger(__name__)
 
 
 class SubController:
