@@ -8,6 +8,7 @@ import requests
 import logging
 from discord.app_commands.errors import AppCommandError, CheckFailure
 import os
+
 PUBLISH_URL = f"{get_base_url()}/publish-vod"
 LOG = logging.getLogger(__name__)
 AUTH_TOKEN = os.getenv("SERVER_TOKEN")
