@@ -1,58 +1,32 @@
 name: robofishbot
 services:
-  bot:
-    build: .
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    configs:
-      - source: robobanana-config
-        target: /config.yaml
-    secrets:
-      - source: robobanana-secrets
-        target: /secrets.yaml
-  server:
-    build:
-      context: .
-      dockerfile: ./server/Dockerfile
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    depends_on:
-      - cache
-    ports:
-      - "3000:3000"
-    configs:
-      - source: robobanana-config
-        target: /config.yaml
-    secrets:
-      - source: robobanana-secrets
-        target: /secrets.yaml
-  cache:
+  - name: bot
+    environment_slug: docker
+    git:
+      repo_clone_url: https://github.com/RyanO-K/RoboBanana.git
+      branch: main
+    build_command: docker build -t robofishbot .
+    run_command: docker-compose up -d bot
+    envs:
+      - key: SOME_SECRET
+        scope: RUN_TIME
+        value: ${SOME_SECRET_FROM_REPOSITORY}
+  - name: server
+    environment_slug: docker
+    git:
+      repo_clone_url: https://github.com/RyanO-K/RoboBanana.git
+      branch: main
+    build_command: docker build -t robofishbot-server -f ./server/Dockerfile .
+    run_command: docker-compose up -d server
+    http_port: 3000
+  - name: cache
+    environment_slug: docker
     image: redis:alpine
-    ports:
-      - '6379:6379'
-    volumes: 
-      - cache:/data
+    run_command: redis-server
+    http_port: 6379
     healthcheck:
-      test: ["CMD", "redis-cli","ping"]
-      timeout: 1s
-      interval: 1s
-      retries: 10
-    
-configs:
-  robobanana-config:
-    file: ./config.yaml
-secrets:
-  robobanana-secrets:
-    file: ./secrets.yaml
-volumes:
-  cache:
-# services:
-# - name: bot
-#   envs:
-#   - key: SOME_SECRET
-#     value: ${SOME_SECRET_FROM_REPOSITORY} # TODO - BRING SECRETS.YAML OVER
-#     type: SECRET
-#   github:
-#     branch: main
-#     repo: RyanO-K/RoboBanana
-    
+      - command: ["redis-cli", "ping"]
+        interval: 10s
+        timeout: 1s
+        retries: 3
+
