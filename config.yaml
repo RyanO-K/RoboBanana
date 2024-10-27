@@ -1,5 +1,5 @@
 Database:
-  Host: db-mysql-nyc3-street-cred-do-user-18150772-0.j.db.ondigitalocean.com
+  Host: db-mysql-nyc3-street-cred-do-user-18150772-0.j.db.ondigitalocean.com:25060
   Name: defaultdb
   Username: doadmin
 Discord:
