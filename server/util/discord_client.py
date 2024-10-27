@@ -2,7 +2,7 @@ import logging
 from discord import Client, ClientUser, Intents, Message
 
 from server.blueprints.chat import publish_chat, publish_chat_simple
-
+import os
 from config import YAMLConfig as Config
 import re
 
@@ -151,7 +151,7 @@ class ServerBot(Client):
 
 async def start_discord_client(client: Client):
     async with client:
-        await client.start(Config.CONFIG.get("Secrets").get("Discord").get("Token"))
+        await client.start()
 
 
-DISCORD_CLIENT = ServerBot()
+DISCORD_CLIENT = ServerBot(os.get("SERVER_TOKEN"))
