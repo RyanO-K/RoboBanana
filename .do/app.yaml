@@ -9,9 +9,15 @@ services:
     routes:
       - path: /bot
     envs:
-      - key: SOME_SECRET
+      - key: DISCORD_TOKEN
         scope: RUN_TIME
-        value: ${SOME_SECRET_FROM_REPOSITORY}
+        value: ${{ secrets.DISCORD_TOKEN }}
+      - key: DATABASE_PASSWORD
+        scope: RUN_TIME
+        value: ${{ secrets.DB_PASSWORD }} 
+      - key: SERVER_TOKEN
+        scope: RUN_TIME
+        value: ${{ secrets.SERVER_TOKEN }} 
 
   - name: server
     github:
@@ -21,6 +27,16 @@ services:
     http_port: 3000
     routes:
       - path: /server
+    env:
+      - key: DISCORD_TOKEN
+        scope: RUN_TIME
+        value: ${{ secrets.DISCORD_TOKEN }}
+      - key: DATABASE_PASSWORD
+        scope: RUN_TIME
+        value: ${{ secrets.DB_PASSWORD }} 
+      - key: SERVER_TOKEN
+        scope: RUN_TIME
+        value: ${{ secrets.SERVER_TOKEN }} 
 
   - name: cache
     image:
@@ -33,3 +49,13 @@ services:
         interval: 10s
         timeout: 1s
         retries: 3
+    env:
+      - key: DISCORD_TOKEN
+        scope: RUN_TIME
+        value: ${{ secrets.DISCORD_TOKEN }}
+      - key: DATABASE_PASSWORD
+        scope: RUN_TIME
+        value: ${{ secrets.DB_PASSWORD }} 
+      - key: SERVER_TOKEN
+        scope: RUN_TIME
+        value: ${{ secrets.SERVER_TOKEN }} 
