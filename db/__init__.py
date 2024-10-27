@@ -116,7 +116,7 @@ class DB:
         password = os.getenv("DATABASE_PASSWORD")
         LOG = logging.getLogger(__name__)
 
-        if password == None or password == '':
+        if password == None or password == "":
             LOG.error("Invalid Database Password")
             LOG.error(password)
         db_host = Config.CONFIG["Database"]["Host"]
