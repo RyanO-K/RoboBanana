@@ -154,4 +154,4 @@ async def start_discord_client(client: Client):
         await client.start(os.getenv("DISCORD_TOKEN"))
 
 
-DISCORD_CLIENT = ServerBot(os.getenv("SERVER_TOKEN"))
+DISCORD_CLIENT = ServerBot()
