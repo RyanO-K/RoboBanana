@@ -99,8 +99,8 @@ class RaffleBot(Client):
         # Disable opening / closing inhouse queues at Ethan's request
         # Leaving here for posterity
         # SubController(self).sync_channel_perms.start()
-        TempRoleController(self).expire_roles.start()
-        GoodMorningController(self).auto_reward_users.start()
+        # TempRoleController(self).expire_roles.start()
+        # GoodMorningController(self).auto_reward_users.start()
         mod_commands.remove_inactive_chatters.start()
 
     async def on_message_edit(self, before: Message, message: Message):
